@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="estilos.css">
 
    <!-- Carga el núcleo de Firebase JS SDK -->
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
     <!-- Agrega el manejo de autenticación. -->
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js">
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js">
     </script>
     <script src="js/init.js"></script>
   </head>
@@ -25,6 +25,50 @@
       <output id="nombre"></output>
     </fieldset>
     <figure><img id="avatar" alt="Avatar"></figure>
+  
+    <h1><em>Formulario de datos escolares</em></h1>
+         <form id="forma" action="javascript:;"> 
+        <p><em>Ingrese los datos que se le piden</em></p>
+        <p>
+            <label accesskey="N">
+          Nombre<br>
+          <input name="nombre" type="text" autofocus required
+                 pattern=".{1,30}" maxlength="30" size="33"
+                 placeholder="Ingresa tu nombre">
+            </label>
+        </p><p>
+            <label accesskey="B">
+            
+          Boleta<br>
+          <input name="boleta" type="tel" pattern="\d{10,12}" required
+                 placeholder="Ingresa tu boleta">
+            </label>
+        </p><p>
+          <label accesskey="G">
+          Grupo<br>
+          <input name="grupo" type="text" required
+                 pattern=".{1,30}" maxlength="30" size="33"
+                 placeholder="Ingresa tu grupo">
+            </label>
+        </p><p>
+          <label accesskey="M">
+          Materia<br>
+          <input name="materia" type="text" required
+                 pattern=".{1,30}" maxlength="30" size="33"
+                 placeholder="Ingresa tu materia">
+            </label>
+        </p><p>
+          <label accesskey="F">
+          Fecha<br>
+          <input name="fecha" type="date" required>
+            </label>
+            </p><p>
+            <input type="submit" value="Procesar"   accesskey="P">
+        </p>
+        <p><output id="salida"></output></p>
+         </form>
+           <script src="js/CtrlDatos.js"></script> 
+    
     <button type="button" onclick="terminaSesión()">Terminar Sesión</button>
     <footer>Copyright &copy; 2021 Ricardo Armando Machorro Reyes.</footer>
     <script>
@@ -60,6 +104,7 @@
         // Función que se invoca si hay un error al verificar el usuario. //
         procesaError
       );
+      
       /** Termina la sesión. */
       async function terminaSesión() {
         try {
