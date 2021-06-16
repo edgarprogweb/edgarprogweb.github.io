@@ -1,2 +1,2 @@
 # edgarprogweb.github.io
-Prueba en firebase
+Página web donde se puede interactuar sobre opiniones y noticias del área política en México
